@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" mode="side" opened>
+    <div class="sidebar-header">XpertCode</div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="cats" routerLinkActive="active">
+        Ver Gatos
+      </a>
+
+      <a mat-list-item routerLink="cats-table" routerLinkActive="active">
+        Tabla de Razas
+      </a>
+
+      <a mat-list-item routerLink="profile" routerLinkActive="active">
+        Mi Perfil
+      </a>
+
+      <a mat-list-item (click)="logout()">Cerrar Sesión</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button
+        mat-icon-button
+        class="menu-btn"
+        type="button"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="title">Panel Principal</span>
+    </mat-toolbar>
+
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

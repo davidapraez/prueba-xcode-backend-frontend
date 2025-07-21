@@ -1,0 +1,23 @@
+@use "@angular/material" as mat;
+
+// Paleta personalizada (si la deseas)
+$my-primary: mat.$azure-palette;
+$my-tertiary: mat.$blue-palette;
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: $my-primary,
+        tertiary: $my-tertiary,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+}

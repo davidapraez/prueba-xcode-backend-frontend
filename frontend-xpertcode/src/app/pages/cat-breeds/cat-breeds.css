@@ -1,0 +1,21 @@
+.full-width {
+  width: 100%;
+  max-width: 480px;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.carousel-img {
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+}

@@ -1,0 +1,12 @@
+.filter-box {
+  margin-bottom: 1rem;
+  max-width: 320px;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+table {
+  width: 100%;
+}

@@ -1,0 +1,88 @@
+/* Fondo general */
+.login-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #113f67, #34699a);
+  padding: 1rem;
+}
+
+/* Card de registro */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fdf5aa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+mat-card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #113f67;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Campos de entrada */
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
+}
+
+mat-label {
+  color: #113f67;
+}
+
+/* Botón de registro */
+button[type="submit"] {
+  margin-top: 0.5rem;
+  background-color: #34699a;
+  color: white;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #113f67;
+}
+
+/* Enlace para ir al login */
+.center-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  color: #113f67;
+}
+
+.center-link span {
+  margin-bottom: 0.3rem;
+}
+
+.center-link button {
+  color: #34699a;
+  font-weight: bold;
+}
+
+.center-link button:hover {
+  color: #113f67;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

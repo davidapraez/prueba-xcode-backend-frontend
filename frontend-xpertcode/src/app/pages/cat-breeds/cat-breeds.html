@@ -1,0 +1,36 @@
+<section class="breed-selector">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Selecciona una raza</mat-label>
+    <mat-select (selectionChange)="onSelect($event.value)">
+      <mat-option *ngFor="let b of breeds()" [value]="b.id">
+        {{ b.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</section>
+
+<section *ngIf="loading()" class="spinner">
+  <mat-spinner diameter="50"></mat-spinner>
+</section>
+
+<section *ngIf="selected() && !loading()">
+  <h2>{{ selected().name }}</h2>
+  <p>{{ selected().description }}</p>
+
+  <!-- Carrusel simple -->
+  <div class="carousel" *ngIf="pictures().length">
+    <button mat-icon-button (click)="prev()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <img
+      [src]="pictures()[current()]?.url"
+      [alt]="selected().name"
+      class="carousel-img"
+    />
+
+    <button mat-icon-button (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</section>
