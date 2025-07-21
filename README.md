@@ -2,17 +2,6 @@ Saludos, esta es una prueba tecnica para xpertcode.
 Stack usado Node.js (Express) + MongoDB + Angular 20 con Material UI.
 
 ====================
-Estructura del proyecto
-====================
-Carpeta / archivo     Descripción breve
--------------------   -----------------------------------------------
-backend-xpertcode     API REST (usuarios, razas de gatos, imágenes)
-frontend-xpertcode    SPA Angular con login, panel y consumo de API
-docker-compose.yml    Levanta MongoDB para desarrollo local
-.env                  Variables (incluye tu CAT_API_KEY)
-THEORY.md             Preguntas teóricas respondidas (ver más abajo)
-
-====================
 Instalación rápida
 ====================
 1. Clona el repositorio
