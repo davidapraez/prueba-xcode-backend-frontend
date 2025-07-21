@@ -1,5 +1,5 @@
-¡Bienvenido!
-Este proyecto demuestra un stack Node.js (Express) + MongoDB + Angular 20 con Material UI.
+Saludos, esta es una prueba tecnica para xpertcode.
+Stack usado Node.js (Express) + MongoDB + Angular 20 con Material UI.
 
 ====================
 Estructura del proyecto
