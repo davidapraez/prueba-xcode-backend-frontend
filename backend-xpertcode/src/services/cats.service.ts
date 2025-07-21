@@ -3,35 +3,36 @@ import axios from "axios";
 const CAT_API_BASE = "https://api.thecatapi.com/v1";
 const HEADERS = { "x-api-key": process.env.CAT_API_KEY || "" };
 
-/** Lista todas las razas */
-export const getAllBreeds = async () => {
+export const getAllBreeds = async (page = 0, limit = 10) => {
   const { data } = await axios.get(`${CAT_API_BASE}/breeds`, {
     headers: HEADERS,
+    params: { page, limit },
   });
-  return data; // array de razas
+
+  if (data.length > limit) {
+    return data.slice(0, limit);
+  }
+  return data;
 };
 
-/** Obtiene una sola raza por ID */
 export const getBreedById = async (breedId: string) => {
   const { data } = await axios.get(`${CAT_API_BASE}/breeds/${breedId}`, {
     headers: HEADERS,
   });
-  return data; // objeto raza
+  return data;
 };
 
-/** Busca razas por texto (query q) */
 export const searchBreeds = async (query: string) => {
   const { data } = await axios.get(`${CAT_API_BASE}/breeds/search?q=${query}`, {
     headers: HEADERS,
   });
-  return data; // array de coincidencias
+  return data;
 };
 
-/** Trae imágenes por raza */
 export const getImagesByBreedId = async (breedId: string, limit = 5) => {
   const { data } = await axios.get(
     `${CAT_API_BASE}/images/search?limit=${limit}&breed_ids=${breedId}`,
     { headers: HEADERS }
   );
-  return data; // array de imágenes
+  return data;
 };

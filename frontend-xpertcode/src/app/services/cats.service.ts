@@ -7,8 +7,10 @@ export class CatsService {
   private http = inject(HttpClient);
   private readonly BASE = 'http://localhost:3000/api';
 
-  listBreeds(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.BASE}/breeds`);
+  listBreeds(page = 0, limit = 10): Observable<any[]> {
+    return this.http.get<any[]>(`${this.BASE}/breeds`, {
+      params: { page, limit },
+    });
   }
 
   searchBreeds(q: string): Observable<any[]> {

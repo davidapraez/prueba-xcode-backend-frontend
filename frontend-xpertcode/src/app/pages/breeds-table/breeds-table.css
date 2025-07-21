@@ -1,12 +1,32 @@
-.filter-box {
-  margin-bottom: 1rem;
-  max-width: 320px;
-}
-.spinner {
+.table-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter-box {
+  width: 100%;
+  max-width: 360px;
+}
+
+.spinner {
+  align-self: center;
   margin-top: 2rem;
 }
+
+.table-container {
+  overflow-x: auto; /* scroll suave en móvil */
+}
+
 table {
-  width: 100%;
+  min-width: 600px;
+}
+
+@media (max-width: 600px) {
+  table {
+    min-width: 530px;
+  }
 }

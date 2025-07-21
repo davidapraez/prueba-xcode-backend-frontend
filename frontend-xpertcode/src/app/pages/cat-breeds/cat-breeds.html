@@ -1,5 +1,6 @@
-<section class="breed-selector">
-  <mat-form-field appearance="outline" class="full-width">
+<div class="cat-wrapper">
+  <!-- SELECTOR DE RAZA -->
+  <mat-form-field appearance="outline" class="selector">
     <mat-label>Selecciona una raza</mat-label>
     <mat-select (selectionChange)="onSelect($event.value)">
       <mat-option *ngFor="let b of breeds()" [value]="b.id">
@@ -7,30 +8,36 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-</section>
 
-<section *ngIf="loading()" class="spinner">
-  <mat-spinner diameter="50"></mat-spinner>
-</section>
+  <!-- LOADING -->
+  <mat-spinner *ngIf="loading()" diameter="48" class="spinner"></mat-spinner>
 
-<section *ngIf="selected() && !loading()">
-  <h2>{{ selected().name }}</h2>
-  <p>{{ selected().description }}</p>
+  <!-- INFO + CARRUSEL -->
+  <mat-card *ngIf="selected() && !loading()" class="breed-card">
+    <mat-card-header>
+      <mat-card-title>{{ selected().name }}</mat-card-title>
+      <mat-card-subtitle>{{ selected().origin }}</mat-card-subtitle>
+    </mat-card-header>
 
-  <!-- Carrusel simple -->
-  <div class="carousel" *ngIf="pictures().length">
-    <button mat-icon-button (click)="prev()">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
+    <mat-card-content>
+      <p>{{ selected().description }}</p>
 
-    <img
-      [src]="pictures()[current()]?.url"
-      [alt]="selected().name"
-      class="carousel-img"
-    />
+      <!-- CARRUSEL -->
+      <div class="carousel" *ngIf="pictures().length">
+        <button mat-icon-button color="primary" (click)="prev()">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
 
-    <button mat-icon-button (click)="next()">
-      <mat-icon>chevron_right</mat-icon>
-    </button>
-  </div>
-</section>
+        <img
+          [src]="pictures()[current()]?.url"
+          [alt]="selected().name"
+          class="carousel-img"
+        />
+
+        <button mat-icon-button color="primary" (click)="next()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

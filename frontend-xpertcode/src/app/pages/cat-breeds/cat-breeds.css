@@ -1,21 +1,52 @@
-.full-width {
-  width: 100%;
-  max-width: 480px;
-}
-.spinner {
+/* ---------- DISTRIBUCIÓN GENERAL ---------- */
+.cat-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ---------- SELECTOR ---------- */
+.selector {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ---------- SPINNER ---------- */
+.spinner {
   margin-top: 2rem;
 }
+
+/* ---------- CARD ---------- */
+.breed-card {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ---------- CARRUSEL ---------- */
 .carousel {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
+
 .carousel-img {
-  width: 320px;
-  height: 240px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
   border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .carousel-img {
+    max-width: 100%;
+  }
 }

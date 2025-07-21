@@ -1,35 +1,50 @@
-<div class="filter-box">
-  <mat-form-field appearance="outline">
-    <mat-label>Buscar</mat-label>
-    <input matInput [(ngModel)]="query" placeholder="Siamese, Bengal..." />
+<div class="table-wrapper">
+  <!-- BUSCADOR -->
+  <mat-form-field appearance="outline" class="filter-box">
+    <mat-label>Buscar raza</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Bengal, Siamese..."
+    />
   </mat-form-field>
+
+  <!-- LOADING -->
+  <mat-spinner *ngIf="loading" diameter="48" class="spinner"></mat-spinner>
+
+  <!-- TABLA -->
+  <div class="table-container" *ngIf="!loading">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Raza</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="origin">
+        <th mat-header-cell *matHeaderCellDef>Origen</th>
+        <td mat-cell *matCellDef="let row">{{ row.origin }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="life_span">
+        <th mat-header-cell *matHeaderCellDef>Vida</th>
+        <td mat-cell *matCellDef="let row">{{ row.life_span }} años</td>
+      </ng-container>
+
+      <ng-container matColumnDef="temperament">
+        <th mat-header-cell *matHeaderCellDef>Temperamento</th>
+        <td mat-cell *matCellDef="let row">{{ row.temperament }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <!-- PAGINADOR -->
+    <mat-paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 15, 20]"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
 </div>
-
-<section *ngIf="loading()" class="spinner">
-  <mat-spinner diameter="50"></mat-spinner>
-</section>
-
-<table mat-table [dataSource]="filtered()" class="mat-elevation-z1">
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Raza</th>
-    <td mat-cell *matCellDef="let row">{{ row.name }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="origin">
-    <th mat-header-cell *matHeaderCellDef>Origen</th>
-    <td mat-cell *matCellDef="let row">{{ row.origin }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="life_span">
-    <th mat-header-cell *matHeaderCellDef>Expectativa</th>
-    <td mat-cell *matCellDef="let row">{{ row.life_span }} años</td>
-  </ng-container>
-
-  <ng-container matColumnDef="temperament">
-    <th mat-header-cell *matHeaderCellDef>Temperamento</th>
-    <td mat-cell *matCellDef="let row">{{ row.temperament }}</td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>

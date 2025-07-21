@@ -7,10 +7,9 @@ import {
 } from "../controllers/cats.contoller";
 
 const router = Router();
-
-router.get("/", getAllBreeds); // GET /api/breeds
-router.get("/search", searchBreeds); // GET /api/breeds/search?q=...
-router.get("/:breed_id", getBreedById); // GET /api/breeds/:id
-router.get("/images/bybreedid", getImagesByBreedId); // GET /api/breeds/images/bybreedid?breed_id=xyz&limit=5
+router.get("/", getAllBreeds);
+router.get("/search", searchBreeds);
+router.get("/images/bybreedid", getImagesByBreedId);
+router.get("/:breed_id", getBreedById);
 
 export default router;

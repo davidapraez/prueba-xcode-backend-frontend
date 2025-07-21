@@ -1,14 +1,14 @@
 import {
   BidiModule
-} from "./chunk-UDXHIGD2.js";
+} from "./chunk-XOOVRCOX.js";
 import {
   _CdkPrivateStyleLoader
-} from "./chunk-NJEG3Q4A.js";
+} from "./chunk-CN2ZLXFS.js";
 import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-DTXWRIV3.js";
+} from "./chunk-HOIB5NUQ.js";
 import {
   APP_ID,
   BehaviorSubject,
@@ -58,7 +58,7 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-YD5ZEQZ6.js";
+} from "./chunk-NCG3OYKL.js";
 import {
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
@@ -3135,12 +3135,14 @@ export {
   InteractivityChecker,
   FocusTrapFactory,
   LiveAnnouncer,
+  A11yModule,
   _IdGenerator,
   hasModifierKey,
   ActiveDescendantKeyManager,
   FocusKeyManager,
   addAriaReferencedId,
   removeAriaReferencedId,
+  AriaDescriber,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-D7QZO2WF.js.map
+//# sourceMappingURL=chunk-DMWDD6OI.js.map
