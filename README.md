@@ -46,7 +46,7 @@ GET      /api/breeds/search?q=sphynx                                      Búsqu
 GET      /api/breeds/images/bybreedid?breed_id=abys&limit=3               Fotos por raza
 
 ====================
-Preguntas teóricas (respuestas resumidas)
+Preguntas teóricas
 ====================
 
 1. Ciclo de vida de un middleware en Express
